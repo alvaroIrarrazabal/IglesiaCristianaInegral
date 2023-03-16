@@ -34,6 +34,7 @@ import { MensajeConfirmacionComponent } from './components/shared/mensaje-confir
 import { FormPersonaComponent } from './components/form-persona/form-persona.component'
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { FormdepruebaComponent } from './components/formdeprueba/formdeprueba.component';
+import { FormdepruebadosComponent } from './components/formdepruebados/formdepruebados.component';
 
 
 // calendarioo*************************
@@ -53,6 +54,7 @@ import { FormdepruebaComponent } from './components/formdeprueba/formdeprueba.co
     MensajeConfirmacionComponent,
     FormPersonaComponent,
     FormdepruebaComponent,
+    FormdepruebadosComponent,
 
 
   ],
