@@ -1,0 +1,344 @@
+<div class="main-content page-m">
+
+  <div class="section-content section-content-p100">
+    <div class="container-fluid">
+
+
+      <form [formGroup]="formPersonas" >
+
+        <div class="text-center" formGroupName="persona" class="form-area">
+          <h3>Personas</h3>
+
+          <div class="row">
+            <div class="col-md-2"><label>Nombre</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <input formControlName="name" type="text">
+                <div *ngIf="formPersonas?.get('persona.name').invalid && (formPersonas?.get('persona.name').dirty || formPersonas?.get('persona.name').touched)" class="alert alert-danger">
+
+                  <div *ngIf="formPersonas?.get('persona.name').errors.required || formPersonas?.get('persona.name').errors.noEspaciosVacios">
+                    El nombre es requerido
+                  </div>
+
+                  <div *ngIf="formPersonas?.get('persona.name').errors.minlength">
+                    El nombre debe contener almenos 3 caracteres
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"><label>Apellido Paterno</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <input formControlName="lastName" type="text">
+                <div *ngIf="apellidoP.invalid && (apellidoP.dirty || apellidoP.touched)" class="alert alert-danger">
+
+                  <div *ngIf="apellidoP.errors.required || apellidoP.errors.noEspaciosVacios">
+                    El apellido paterno es requerido
+                  </div>
+
+                  <div *ngIf="apellidoP.errors.minlength">
+                    El apellido paterno debe contener almenos 3 caracteres
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"><label>Apellido Materno</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <input formControlName="lastName2" type="text">
+                <div *ngIf="apellidoM.invalid && (apellidoM.dirty || apellidoM.touched)" class="alert alert-danger">
+
+                  <div *ngIf="apellidoM.errors.required || apellidoM.errors.noEspaciosVacios">
+                    El apellido materno es requerido
+                  </div>
+
+                  <div *ngIf="apellidoM.errors.minlength">
+                    El apellido materno debe contener almenos 3 caracteres
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-2"><label>Red Social</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <input formControlName="socialNetwork" type="text">
+                <div *ngIf="socialNetwork.invalid && (socialNetwork.dirty || socialNetwork.touched)" class="alert alert-danger">
+
+                  <div *ngIf="socialNetwork.errors.required || socialNetwork.errors.noEspaciosVacios">
+                    La Red Social es requerida
+                  </div>
+
+                  <div *ngIf="socialNetwork.errors.minlength">
+                    la Red Social debe contener almenos 3 caracteres
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"><label>Profesión u ocupación</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <input formControlName="profession" type="text">
+                <div *ngIf="profession.invalid && (profession.dirty || profession.touched)" class="alert alert-danger">
+
+                  <div *ngIf="profession.errors.required || profession.errors.noEspaciosVacios">
+                    La profesión u ocupación es requerida
+                  </div>
+
+                  <div *ngIf="profession.errors.minlength">
+                    La profesión u ocupación debe contener almenos 3 caracteres
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"><label>Casado con</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <input formControlName="spouse" type="text">
+                <div *ngIf="spouse.invalid && (spouse.dirty || spouse.touched)" class="alert alert-danger">
+
+                  <div *ngIf="spouse.errors.required || spouse.errors.noEspaciosVacios">
+                    El nombre de su conyuge es requerida
+                  </div>
+
+                  <div *ngIf="spouse.errors.minlength">
+                    El nombre del conyuge  debe contener almenos 3 caracteres
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"><label>Estado civil</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <select formControlName="civilStatus">
+                  <option value="">Seleccione</option>
+                  <option value="soltero">Soltero(a)</option>
+                  <option value="casadoo">Casado(a)</option>
+                  <option value="viudo">Viudo(a)</option>
+                  <option value="divorciado">Divorciado(a)</option>
+
+                </select>
+
+              </div>
+            </div>
+          </div>
+
+
+
+            <div class="row">
+              <div class="col-md-2"><label>Genero</label></div>
+              <div class="col-md-9">
+                <div class="input-space">
+
+                  <select formControlName="gender">
+                    <option value="">Seleccione</option>
+
+                    <option value="f">Masculino</option>
+                    <option value="m">Femenino</option>
+                  </select>
+
+                </div>
+              </div>
+            </div>
+
+          <div class="row">
+            <div class="col-md-2"><label>Fecha Nacimiento</label></div>
+            <div class="col-md-9">
+
+
+               <mat-form-field class=" p-3" >
+
+                <input matInput [matDatepicker]="picker"  formControlName="birthDate" >
+
+                <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="text-center" formGroupName="persona" class="form-area">
+          <h3>Datos de contacto</h3>
+
+          <div class="row">
+            <div class="col-md-2"><label>Email</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <input formControlName="email" type="text">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+
+                  <div *ngIf="email.errors.required || email.errors.noEspaciosVacios">
+                    El email es requerido
+                  </div>
+
+                  <div *ngIf="email.errors.pattern">
+                    El email ingresado es invalido
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"><label>Teléfono</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <input formControlName="phone" type="text">
+                <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)" class="alert alert-danger">
+
+                  <div *ngIf="telefono.errors.required || telefono.errors.noEspaciosVacios">
+                    El telefono es requerido
+                  </div>
+
+                  <div *ngIf="telefono.errors.pattern">
+                    El telefono ingresado es invalido
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- au-checkbox -->
+        <div class="text-center" formGroupName="persona" class="form-area">
+          <h3>Roles</h3>
+          <div class="form-check"  *ngFor="let roles of rols">
+            <input class="form-check-input" formControlName="role" (change)="recibirRol($event)"  type="checkbox"
+             [value]="roles.id" >
+            <label class="form-check-label">
+           {{roles.name}}
+            </label>
+          </div>
+
+
+          <div class="row mt-5" >
+            <div class="col-md-2"><label>Supervisor</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <select formControlName="supervisorId" type="text" >
+                  <option>Seleccionar Supervisor</option>
+                  <option value="{{supervisores.id}}" *ngFor="let supervisores of supervisor">{{supervisores.name}}</option>
+
+                </select>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="text-center" formGroupName="persona" class="form-area">
+          <h3>Dirección</h3>
+
+          <div class="row">
+            <div class="col-md-2"><label>Pais</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+
+                <select formControlName="country" (change)="buscarPais($event)"
+                name="paises">
+
+                <option value="">Seleccione</option>
+
+                  <option  value="{{pais.id}}" *ngFor="let pais of paises">
+                    {{pais.name}}</option>
+
+
+                </select>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"><label>Región</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <select formControlName="region" (change)="buscarRegion($event)">
+                  <option value="">Seleccione</option>
+
+                  <option *ngFor="let regiones of region"
+                  value="{{regiones.id}}">{{regiones.name}}</option>
+
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2"><label>Cómuna</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <select formControlName="commune" type="text" (change)="buscarComuna($event)">
+                  <option value="">Seleccione</option>
+
+                  <option value="{{comunas.id}}"*ngFor="let comunas of comuna">{{comunas.name}}</option>
+
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="row">
+            <div class="col-md-2"><label>Dirección</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+
+                <input formControlName="email" type="text" placeholder="Ej. Villa jardines de los andes, Hector Humeres N° 278">
+              </div>
+            </div>
+          </div> -->
+
+
+        </div>
+
+
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-info"  (click)="guardarPersona()">Guardar</button>
+        </div>
+      </form>
+      <p>
+        Form Status: {{ formPersonas.status }}
+      </p>
+        <p>
+          Value: {{ formPersonas.value | json}}
+
+      </p>
+    </div>
+  </div>
+</div>

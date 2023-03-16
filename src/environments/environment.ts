@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  endpoint :'http://localhost:8081/api/personas',
+  endpointPais :'http://localhost:8081/api/paises',
+  endpointReg : 'http://localhost:8081/api/regiones/',
+  endpointSupervisores :'http://localhost:8081/api/personaSupervisada/supervisor',
+  endpointComu :'http://localhost:8081/api/comunas/',
+  endpointrols :'http://localhost:8081/api/roles/',
+  endpointCumple:'http://localhost:8081/api/personasCumple',
+  endpointSupervisados:'http://localhost:8081/api/supervisado'
+
+
 };
 
 /*
