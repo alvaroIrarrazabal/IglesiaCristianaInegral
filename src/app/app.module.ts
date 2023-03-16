@@ -33,8 +33,7 @@ import { AngularMaterialModule } from '../app/components/shared/angular-material
 import { MensajeConfirmacionComponent } from './components/shared/mensaje-confirmacion/mensaje-confirmacion.component';
 import { FormPersonaComponent } from './components/form-persona/form-persona.component'
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { FormdepruebaComponent } from './components/formdeprueba/formdeprueba.component';
-import { FormdepruebadosComponent } from './components/formdepruebados/formdepruebados.component';
+
 
 
 // calendarioo*************************
@@ -53,8 +52,6 @@ import { FormdepruebadosComponent } from './components/formdepruebados/formdepru
     CursosComponent,
     MensajeConfirmacionComponent,
     FormPersonaComponent,
-    FormdepruebaComponent,
-    FormdepruebadosComponent,
 
 
   ],
